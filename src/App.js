@@ -5,23 +5,26 @@ import { BrowserRouter, Routes, Link, Route } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import ContextProvider from './contexts';
+
 function App() {
   return (
     <div className="App">
       <h1>Products Apllication</h1>
       <BrowserRouter>
+        <ContextProvider>
+          <Nav>
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/products">Register Products</Nav.Link>
+            <Nav.Link as={Link} to="/about">About</Nav.Link>
+          </Nav>
 
-        <Nav>
-          <Nav.Link as={Link} to="/">Home</Nav.Link>
-          <Nav.Link as={Link} to="/products">Register Products</Nav.Link>
-          <Nav.Link as={Link} to="/about">About</Nav.Link>
-        </Nav>
-
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/products' element={<Products />} />
-          <Route path='/about' element={<About />} />
-        </Routes>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/products' element={<Products />} />
+            <Route path='/about' element={<About />} />
+          </Routes>
+        </ContextProvider>
       </BrowserRouter>
     </div>
   );

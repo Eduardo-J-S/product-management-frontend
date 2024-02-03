@@ -1,24 +1,11 @@
+import React, { useContext } from 'react';
+import { PerfilContext } from '../../contexts';
 import './styles.css';
 
 const Products = () => {
+    const { products } = useContext(PerfilContext);
 
-    const productsTable = [
-        {
-            "id": 1,
-            "name": "Produto 1",
-            "brand": "Marca A"
-        },
-        {
-            "id": 2,
-            "name": "Produto 2",
-            "brand": "Marca B"
-        },
-        {
-            "id": 3,
-            "name": "Produto 3",
-            "brand": "Marca C"
-        },
-    ]
+    console.log(products)
 
     return (
         <div className=''>
@@ -32,11 +19,11 @@ const Products = () => {
                 </thead>
                 <tbody>
                     {
-                        productsTable.map((element, index) => (
-                            <tr key={index}>
+                        products.map((element) => (
+                            <tr key={element.id}>
                                 <td>{element.name}</td>
-                                <td>{element.brand}</td>                                
-                                <td>View/Edit</td>                                
+                                <td>{element.brand}</td>
+                                <td>View/Edit</td>
                             </tr>
                         ))
                     }
