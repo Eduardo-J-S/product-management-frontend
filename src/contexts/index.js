@@ -1,12 +1,13 @@
-import React, {useState, createContext, useEffect} from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import api from '../service/api';
 
 export const PerfilContext = createContext({});
 
-const ContextProvider = ({children}) => {
+const ContextProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
+    const [errorPost, setErrorPost] = useState([]);
 
-    const getData = async() => {
+    const getAllProducts = async () => {
         try {
             const response = await api.get('/products');
             setProducts(response.data);
@@ -14,19 +15,58 @@ const ContextProvider = ({children}) => {
             console.log("Ocorreu um erro: " + error);
         }
     }
-    
-    
+
+    const deleteProduct = async (id) => {
+        try {
+            const response = await api.delete(`/products/${id}`)
+            getAllProducts();
+            console.log(response.data)
+        } catch (error) {
+            console.log("Ocorreu um erro: " + error);
+        }
+    }
+
+    const postProducts = async (name, brand) => {
+        try {
+            const response = await api.post('/products', {
+                "name": name,
+                "brand": brand
+            });
+            getAllProducts();
+            console.log(response.data)
+        } catch (error) {
+            if (error.response) {
+                console.log("Erro de resposta do servidor:", error.response.data);
+                setErrorPost(error.response.data.toString())
+            } else if (error.request) {
+                console.log("Sem resposta do servidor");
+            } else {
+                console.log("Erro ao configurar a solicitação:", error.message);
+            }
+        }
+    }
+
+    const putProduct = async (id) => {
+        try {
+            const response = await api.put(`/products/${id}`)
+            getAllProducts();
+            console.log(response.data)
+        } catch (error) {
+            console.log("Ocorreu um erro: " + error);
+        }
+    }
+
     useEffect(() => {
-        getData();
+        getAllProducts();
     }, []);
-    
-    return(
+
+    return (
         <PerfilContext.Provider value={{
-            products
+            products, deleteProduct, postProducts, errorPost, setErrorPost, putProduct
         }}>
             {children}
         </PerfilContext.Provider>
     )
-} 
+}
 
 export default ContextProvider;

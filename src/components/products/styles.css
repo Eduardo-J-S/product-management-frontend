@@ -1,12 +1,18 @@
+.products {
+    padding: 8px;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;
     margin-top: 20px;
+    text-align: center;
 }
 
-th, td {
+th,
+td {
     padding: 8px;
-    text-align: left;
+    text-align: center;
     border: 1px solid #ddd;
 }
 
@@ -20,4 +26,77 @@ tbody tr:nth-child(even) {
 
 tbody tr:hover {
     background-color: #f0f0f0;
+}
+
+.buttonDelete {
+    background-color: #a01d13;
+    border-radius: 4px;
+    border: 1px #f22f21;
+    color: white;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+}
+
+.buttonDelete:hover {
+    background-color: #ff3d20;
+    transform: scale(1.1);
+    color: white;
+}
+
+.buttonEdit {
+    background-color: #143e97;
+    border-radius: 4px;
+    border: 1px #2163f2;
+    color: white;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+}
+
+.buttonEdit:hover {
+    background-color: #2163f2;
+    transform: scale(1.1);
+    color: white;
+}
+
+.area {
+    flex-direction: column;
+    margin: auto;
+}
+
+.formName,
+.formBrand {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: 400;
+}
+
+.fieldName,
+.fieldBrand {
+    padding: 8px;
+    font-size: 16px;
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.fieldName:focus,
+.fieldBrand:focus {
+    outline: none;
+    border: 1px solid #4285f4; 
+    box-shadow: 0 0 5px rgba(66, 133, 244, 0.5);
+}
+
+.buttonPost {
+    padding: 5px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 70px;
+    border-radius: 5px;
+}
+
+.buttonPost:hover {
+    background-color: #209622;
 }
