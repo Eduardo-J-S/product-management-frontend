@@ -1,16 +1,20 @@
-import Home from './components/home';
-import About from './components/about';
-import Products from './components/products';
+import React from 'react';
 import { BrowserRouter, Routes, Link, Route } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 import ContextProvider from './contexts';
+import Home from './components/home';
+import About from './components/about';
+import Products from './components/products';
 
 function App() {
   return (
     <div className="App">
-      <h1>Products Apllication</h1>
+      <header className="header">
+        <h1 className="title">Productify</h1>
+      </header>
       <BrowserRouter>
         <ContextProvider>
           <Nav>
