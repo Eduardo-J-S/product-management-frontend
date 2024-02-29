@@ -1,4 +1,4 @@
-# Products Application
+# Products Web Application
 The Products Application is a frontend project developed to interact with the [Products API](https://github.com/Eduardo-J-S/product-management-api). It provides a user-friendly interface for managing products, including functionalities for creating, updating, listing, and deleting products. The application is built using React.js and integrates with the Products API to fetch and manipulate product data.
 
 ## Technologies Used
