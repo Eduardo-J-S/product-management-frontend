@@ -1,26 +1,31 @@
-# Products Web Application
-The Products Application is a frontend project developed to interact with the [Products API](https://github.com/Eduardo-J-S/product-management-api). It provides a user-friendly interface for managing products, including functionalities for creating, updating, listing, and deleting products. The application is built using React.js and integrates with the Products API to fetch and manipulate product data.
+[Read in English](README.en.md)
 
-## Technologies Used
+---
+
+## Aplicação de Produtos
+
+A Aplicação de Produtos é um projeto frontend desenvolvido para interagir com a [API de Produtos](https://github.com/Eduardo-J-S/product-management-api). Ele fornece uma interface amigável para gerenciar produtos, incluindo funcionalidades para criar, atualizar, listar e excluir produtos. A aplicação é construída usando React.js e integra-se com a API de Produtos para buscar e manipular dados de produtos.
+
+### Tecnologias Utilizadas
 - React.js
 - React Router
 - Bootstrap
 - Context API
 - Axios
 
-## Features
-1. **Product Management**: Users can create, update, list, and delete products through the application.
-2. **Responsive Design**: The application is responsive and optimized for use on devices of various screen sizes.
-3. **Error Handling**: Error messages are displayed to users in case of any issues, providing a smooth user experience.
+### Funcionalidades
+- **Gerenciamento de Produtos:** Os usuários podem criar, atualizar, listar e excluir produtos por meio da aplicação.
+- **Design Responsivo:** A aplicação é responsiva e otimizada para uso em dispositivos de vários tamanhos de tela.
+- **Tratamento de Erros:** Mensagens de erro são exibidas aos usuários em caso de qualquer problema, proporcionando uma experiência de usuário tranquila.
 
-## Installation
-1. Clone the repository: git clone https://github.com/Eduardo-J-S/product-frontend-web.git
-2. Navigate to the project directory: cd product-frontend-web
-3. Install dependencies: npm install
-4. Start the development server: npm start
-5. Access the application in your browser at http://localhost:3000
+### Instalação
+1. Clone o repositório: `git clone https://github.com/Eduardo-J-S/product-frontend.git`
+2. Navegue até o diretório do projeto: `cd product-frontend`
+3. Instale as dependências: `npm install`
+4. Inicie o servidor de desenvolvimento: `npm start`
+5. Acesse a aplicação em seu navegador em http://localhost:3000
 
-## Usage
-- Upon launching the application, users are presented with options to navigate to the Home, Register Products, and About pages using the navigation bar.
-- The Register Products page allows users to add new products, update existing products, and delete products from the catalog.
-- Users can navigate to the About page to learn more about the application, the team behind it, and the technologies used.
+### Uso
+- Ao iniciar a aplicação, os usuários têm opções para navegar para as páginas Home, Registrar Produtos e Sobre usando a barra de navegação.
+- A página Registrar Produtos permite aos usuários adicionar novos produtos, atualizar produtos existentes e excluir produtos do catálogo.
+- Os usuários podem navegar até a página Sobre para saber mais sobre a aplicação, a equipe por trás dela e as tecnologias utilizadas.
